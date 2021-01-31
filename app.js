@@ -1,7 +1,9 @@
 const axios = require("axios");
 const express = require("express");
+require("dotenv").config();
 const app = express();
 
+const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
 app.get('/api/rates', async function Rates (req, res) {
 
@@ -15,7 +17,6 @@ app.get('/api/rates', async function Rates (req, res) {
 
     try {
         var response = await axios.get(url)
-        console.log(response)
         result = {
             "base": response.data.base,
             "date": response.data.date,
@@ -31,6 +32,6 @@ app.get('/api/rates', async function Rates (req, res) {
 
 
 /* Listen to port */
-app.listen(3000, () => {
-    console.log(`"Server is running on port 3000!`)
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`)
 })

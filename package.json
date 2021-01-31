@@ -1,23 +1,28 @@
 {
-  "name": "ratesapi",
+  "name": "rates-api",
   "version": "1.0.0",
-  "description": "Serves as reverse proxy to Exchange Rate API",
+  "description": "Serves as reverse proxy to a third-party Exchange Rate API",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/believemanasseh/rates_api.git"
+    "url": "git+https://github.com/believemanasseh/rates-api.git"
   },
-  "author": "Believe Amadi",
+  "author": "believemanasseh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/believemanasseh/rates_api/issues"
+    "url": "https://github.com/believemanasseh/rates-api/issues"
   },
-  "homepage": "https://github.com/believemanasseh/rates_api#readme",
+  "homepage": "https://github.com/believemanasseh/rates-api#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.4.0"
   }
 }
